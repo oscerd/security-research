@@ -1,38 +1,38 @@
 # Security Research
 
-Vulnerabilities I have reported to the Apache Software Foundation, disclosed through the [ASF security process](https://www.apache.org/security/). **42 CVEs across 13 projects**, 2023–2026.
+Vulnerabilities I have reported to the Apache Software Foundation, disclosed through the [ASF security process](https://www.apache.org/security/). **42 CVEs across 13 projects**, 2023 to 2026.
 
-Where a public reproducer exists it is linked — a minimal, self-contained project that demonstrates the issue and names the release that fixed it.
+Where a public reproducer exists it is linked. Each one is a minimal, self-contained project that demonstrates the issue and names the release that fixed it.
 
 Across 23 distinct CWEs, two classes dominate: **deserialization of untrusted data** (7) and **server-side request forgery** (7).
 
 
-## Across the Apache ecosystem — 14 CVEs, 12 projects
+## Across the Apache ecosystem: 14 CVEs, 12 projects
 
 | CVE | Component | Class | Fixed in | PoC |
 |---|---|---|---|---|
-| [CVE-2023-41313](https://www.cve.org/CVERecord?id=CVE-2023-41313) | Doris | `CWE-208` Observable Timing Discrepancy | `1.2.8` | — |
-| [CVE-2023-41834](https://www.cve.org/CVERecord?id=CVE-2023-41834) | Flink Stateful Functions | `CWE-74` Improper Neutralization of Special Elements in Output Used by a Downstream Component | `3.2.0` | — |
-| [CVE-2023-43123](https://www.cve.org/CVERecord?id=CVE-2023-43123) | Storm | `CWE-200` Exposure of Sensitive Information to an Unauthorized Actor | `2.6.0` | — |
-| [CVE-2024-23454](https://www.cve.org/CVERecord?id=CVE-2024-23454) | Hadoop | `CWE-378` Creation of Temporary File With Insecure Permissions | `3.4.0` | — |
-| [CVE-2024-23953](https://www.cve.org/CVERecord?id=CVE-2024-23953) | Hive | `CWE-208` Observable Timing Discrepancy | `4.0.0` | — |
-| [CVE-2024-29869](https://www.cve.org/CVERecord?id=CVE-2024-29869) | Hive | `CWE-732` Incorrect Permission Assignment for Critical Resource | `4.0.1` | — |
-| [CVE-2026-34476](https://www.cve.org/CVERecord?id=CVE-2026-34476) | SkyWalking MCP | `CWE-918` Server-Side Request Forgery | — | — |
-| [CVE-2026-40005](https://www.cve.org/CVERecord?id=CVE-2026-40005) | IoTDB | `CWE-22` Improper Limitation of a Pathname to a Restricted Directory | `2.0.10` | — |
-| [CVE-2026-40008](https://www.cve.org/CVERecord?id=CVE-2026-40008) | IoTDB | `CWE-470` Use of Externally-Controlled Input to Select Classes or Code | `2.0.10` | — |
+| [CVE-2023-41313](https://www.cve.org/CVERecord?id=CVE-2023-41313) | Doris | `CWE-208` Observable Timing Discrepancy | `1.2.8` | - |
+| [CVE-2023-41834](https://www.cve.org/CVERecord?id=CVE-2023-41834) | Flink Stateful Functions | `CWE-74` Improper Neutralization of Special Elements in Output Used by a Downstream Component | `3.2.0` | - |
+| [CVE-2023-43123](https://www.cve.org/CVERecord?id=CVE-2023-43123) | Storm | `CWE-200` Exposure of Sensitive Information to an Unauthorized Actor | `2.6.0` | - |
+| [CVE-2024-23454](https://www.cve.org/CVERecord?id=CVE-2024-23454) | Hadoop | `CWE-378` Creation of Temporary File With Insecure Permissions | `3.4.0` | - |
+| [CVE-2024-23953](https://www.cve.org/CVERecord?id=CVE-2024-23953) | Hive | `CWE-208` Observable Timing Discrepancy | `4.0.0` | - |
+| [CVE-2024-29869](https://www.cve.org/CVERecord?id=CVE-2024-29869) | Hive | `CWE-732` Incorrect Permission Assignment for Critical Resource | `4.0.1` | - |
+| [CVE-2026-34476](https://www.cve.org/CVERecord?id=CVE-2026-34476) | SkyWalking MCP | `CWE-918` Server-Side Request Forgery | not published | - |
+| [CVE-2026-40005](https://www.cve.org/CVERecord?id=CVE-2026-40005) | IoTDB | `CWE-22` Improper Limitation of a Pathname to a Restricted Directory | `2.0.10` | - |
+| [CVE-2026-40008](https://www.cve.org/CVERecord?id=CVE-2026-40008) | IoTDB | `CWE-470` Use of Externally-Controlled Input to Select Classes or Code | `2.0.10` | - |
 | [CVE-2026-40564](https://www.cve.org/CVERecord?id=CVE-2026-40564) | Flink Kubernetes Operator | `CWE-918` Server-Side Request Forgery | `1.15.0` | [reproducer](https://github.com/oscerd/CVE-2026-40564) |
-| [CVE-2026-41041](https://www.cve.org/CVERecord?id=CVE-2026-41041) | Gravitino | `CWE-177` Improper Handling of URL Encoding | `1.2.1` | — |
-| [CVE-2026-44616](https://www.cve.org/CVERecord?id=CVE-2026-44616) | Zeppelin | `CWE-90` Improper Neutralization of Special Elements used in an LDAP Query | `0.12.1` | — |
-| [CVE-2026-49361](https://www.cve.org/CVERecord?id=CVE-2026-49361) | Fluss (incubating) | `CWE-400` Uncontrolled Resource Consumption | — | — |
-| [CVE-2026-64640](https://www.cve.org/CVERecord?id=CVE-2026-64640) | Polaris | `CWE-863` Incorrect Authorization | `1.6.0` | — |
+| [CVE-2026-41041](https://www.cve.org/CVERecord?id=CVE-2026-41041) | Gravitino | `CWE-177` Improper Handling of URL Encoding | `1.2.1` | - |
+| [CVE-2026-44616](https://www.cve.org/CVERecord?id=CVE-2026-44616) | Zeppelin | `CWE-90` Improper Neutralization of Special Elements used in an LDAP Query | `0.12.1` | - |
+| [CVE-2026-49361](https://www.cve.org/CVERecord?id=CVE-2026-49361) | Fluss (incubating) | `CWE-400` Uncontrolled Resource Consumption | not published | - |
+| [CVE-2026-64640](https://www.cve.org/CVERecord?id=CVE-2026-64640) | Polaris | `CWE-863` Incorrect Authorization | `1.6.0` | - |
 
-## Apache Camel — 28 CVEs
+## Apache Camel: 28 CVEs
 
 Camel is the project I maintain, so it gets the most scrutiny. The dominant pattern is **unfiltered inbound headers reaching a producer's control plane**, plus a long tail of unsafe deserialization in registry and migration paths.
 
 | CVE | Component | Class | Fixed in | PoC |
 |---|---|---|---|---|
-| [CVE-2024-23114](https://www.cve.org/CVERecord?id=CVE-2024-23114) | Camel | `CWE-502` Deserialization of Untrusted Data | `3.21.4`, `3.22.1`, `4.0.4`, `4.4.0` | — |
+| [CVE-2024-23114](https://www.cve.org/CVERecord?id=CVE-2024-23114) | Camel | `CWE-502` Deserialization of Untrusted Data | `3.21.4`, `3.22.1`, `4.0.4`, `4.4.0` | - |
 | [CVE-2026-23552](https://www.cve.org/CVERecord?id=CVE-2026-23552) | Camel | `CWE-346` Origin Validation Error | `4.18.0` | [reproducer](https://github.com/oscerd/CVE-2026-23552) |
 | [CVE-2026-25747](https://www.cve.org/CVERecord?id=CVE-2026-25747) | Camel LevelDB | `CWE-502` Deserialization of Untrusted Data | `4.10.9`, `4.14.5`, `4.18.0` | [reproducer](https://github.com/oscerd/CVE-2026-25747) |
 | [CVE-2026-27172](https://www.cve.org/CVERecord?id=CVE-2026-27172) | Camel | `CWE-502` Deserialization of Untrusted Data | `4.14.6`, `4.18.1` | [reproducer](https://github.com/oscerd/CVE-2026-27172) |
@@ -59,11 +59,11 @@ Camel is the project I maintain, so it gets the most scrutiny. The dominant patt
 | [CVE-2026-55993](https://www.cve.org/CVERecord?id=CVE-2026-55993) | Camel Atmosphere Websocket | `CWE-918` Server-Side Request Forgery | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-55993) |
 | [CVE-2026-55994](https://www.cve.org/CVERecord?id=CVE-2026-55994) | Camel Iggy | `CWE-918` Server-Side Request Forgery | `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-55994) |
 | [CVE-2026-56139](https://www.cve.org/CVERecord?id=CVE-2026-56139) | Camel Undertow | `CWE-209` Generation of Error Message Containing Sensitive Information | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-56139) |
-| [CVE-2026-56140](https://www.cve.org/CVERecord?id=CVE-2026-56140) | Camel AWS2 SNS | `CWE-20` Improper Input Validation | `4.14.8`, `4.18.3`, `4.21.0` | — |
+| [CVE-2026-56140](https://www.cve.org/CVERecord?id=CVE-2026-56140) | Camel AWS2 SNS | `CWE-20` Improper Input Validation | `4.14.8`, `4.18.3`, `4.21.0` | - |
 
-## Reproducers for issues found by others — 20
+## Reproducers for issues found by others: 20
 
-As a Camel maintainer I also build reproducers for reports that come in from outside, to confirm the issue and validate the fix. **These are not my findings** — credit belongs to the reporters named below.
+As a Camel maintainer I also build reproducers for reports that come in from outside, to confirm the issue and validate the fix. **These are not my findings.** Credit belongs to the reporters named below.
 
 | CVE | Component | Class | Fixed in | Reported by | PoC |
 |---|---|---|---|---|---|
