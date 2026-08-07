@@ -12,7 +12,7 @@ Across 23 distinct CWEs, two classes dominate: **deserialization of untrusted da
 | CVE | Component | Class | Fixed in | PoC |
 |---|---|---|---|---|
 | [CVE-2023-41313](https://www.cve.org/CVERecord?id=CVE-2023-41313) | Doris | `CWE-208` Observable Timing Discrepancy | `1.2.8` | - |
-| [CVE-2023-41834](https://www.cve.org/CVERecord?id=CVE-2023-41834) | Flink Stateful Functions | `CWE-74` Improper Neutralization of Special Elements in Output Used by a Downstream Component | `3.2.0` | - |
+| [CVE-2023-41834](https://www.cve.org/CVERecord?id=CVE-2023-41834) | Flink Stateful Functions | `CWE-74` Improper Neutralization of Special Elements in Output Used by a Downstream Component | `3.3.0` | - |
 | [CVE-2023-43123](https://www.cve.org/CVERecord?id=CVE-2023-43123) | Storm | `CWE-200` Exposure of Sensitive Information to an Unauthorized Actor | `2.6.0` | - |
 | [CVE-2024-23454](https://www.cve.org/CVERecord?id=CVE-2024-23454) | Hadoop | `CWE-378` Creation of Temporary File With Insecure Permissions | `3.4.0` | - |
 | [CVE-2024-23953](https://www.cve.org/CVERecord?id=CVE-2024-23953) | Hive | `CWE-208` Observable Timing Discrepancy | `4.0.0` | - |
@@ -24,7 +24,7 @@ Across 23 distinct CWEs, two classes dominate: **deserialization of untrusted da
 | [CVE-2026-41041](https://www.cve.org/CVERecord?id=CVE-2026-41041) | Gravitino | `CWE-177` Improper Handling of URL Encoding | `1.2.1` | - |
 | [CVE-2026-44616](https://www.cve.org/CVERecord?id=CVE-2026-44616) | Zeppelin | `CWE-90` Improper Neutralization of Special Elements used in an LDAP Query | `0.12.1` | - |
 | [CVE-2026-49361](https://www.cve.org/CVERecord?id=CVE-2026-49361) | Fluss (incubating) | `CWE-400` Uncontrolled Resource Consumption | not published | - |
-| [CVE-2026-64640](https://www.cve.org/CVERecord?id=CVE-2026-64640) | Polaris | `CWE-863` Incorrect Authorization | `1.6.0` | - |
+| [CVE-2026-64640](https://www.cve.org/CVERecord?id=CVE-2026-64640) | Polaris | `CWE-863` Incorrect Authorization | `1.7.0` | [reproducer](https://github.com/oscerd/CVE-2026-64640) |
 
 ## Apache Camel: 28 CVEs
 
@@ -68,7 +68,7 @@ As a Camel maintainer I also build reproducers for reports that come in from out
 | CVE | Component | Class | Fixed in | Reported by | PoC |
 |---|---|---|---|---|---|
 | [CVE-2024-22369](https://www.cve.org/CVERecord?id=CVE-2024-22369) | Camel | `CWE-502` Deserialization of Untrusted Data | `3.21.4`, `3.22.1`, `4.0.4`, `4.4.0` | Ziyang Chen from HuaWei Open Source Management Center, Pingtao Wei from HuaWei Open Source Management Center (finder) and Haoran Zhi from HuaWei Open Source Management Center | [reproducer](https://github.com/oscerd/CVE-2024-22369) |
-| [CVE-2026-33453](https://www.cve.org/CVERecord?id=CVE-2026-33453) | Camel | `CWE-915` Improperly Controlled Modification of Dynamically-Determined Object Attributes | `4.14.5`, `4.18.1` | Hyunwoo Kim (@v4bel) | [reproducer](https://github.com/oscerd/CVE-2026-33453) |
+| [CVE-2026-33453](https://www.cve.org/CVERecord?id=CVE-2026-33453) | Camel | `CWE-915` Improperly Controlled Modification of Dynamically-Determined Object Attributes | `4.18.1`, `4.19.0` | Hyunwoo Kim (@v4bel) | [reproducer](https://github.com/oscerd/CVE-2026-33453) |
 | [CVE-2026-33454](https://www.cve.org/CVERecord?id=CVE-2026-33454) | Camel | `CWE-502` Deserialization of Untrusted Data | `4.14.6`, `4.18.1` | Hyunwoo Kim (@v4bel) | [reproducer](https://github.com/oscerd/CVE-2026-33454) |
 | [CVE-2026-40022](https://www.cve.org/CVERecord?id=CVE-2026-40022) | Camel Platform HTTP Main | `CWE-288` Authentication Bypass Using an Alternate Path or Channel | `4.14.6`, `4.18.2` | Jihang Yu | [reproducer](https://github.com/oscerd/CVE-2026-40022) |
 | [CVE-2026-40453](https://www.cve.org/CVERecord?id=CVE-2026-40453) | Camel JMS | `CWE-178` Improper Handling of Case Sensitivity | `4.14.6`, `4.18.2`, `4.20.0` | Saroj Khadka | [reproducer](https://github.com/oscerd/CVE-2026-40453) |
@@ -83,10 +83,10 @@ As a Camel maintainer I also build reproducers for reports that come in from out
 | [CVE-2026-46456](https://www.cve.org/CVERecord?id=CVE-2026-46456) | Camel | `CWE-20` Improper Input Validation | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46456) |
 | [CVE-2026-46457](https://www.cve.org/CVERecord?id=CVE-2026-46457) | Camel | `CWE-20` Improper Input Validation | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46457) |
 | [CVE-2026-46584](https://www.cve.org/CVERecord?id=CVE-2026-46584) | Camel Mail | `CWE-200` Exposure of Sensitive Information to an Unauthorized Actor | `4.14.8`, `4.18.3`, `r` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46584) |
-| [CVE-2026-46587](https://www.cve.org/CVERecord?id=CVE-2026-46587) | Camel | `CWE-20` Improper Input Validation | `4.14.7`, `4.18.2`, `4.20.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46587) |
-| [CVE-2026-46588](https://www.cve.org/CVERecord?id=CVE-2026-46588) | Camel | `CWE-20` Improper Input Validation | `4.14.7`, `4.18.2`, `4.20.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46588) |
+| [CVE-2026-46587](https://www.cve.org/CVERecord?id=CVE-2026-46587) | Camel | `CWE-20` Improper Input Validation | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46587) |
+| [CVE-2026-46588](https://www.cve.org/CVERecord?id=CVE-2026-46588) | Camel | `CWE-20` Improper Input Validation | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46588) |
 | [CVE-2026-47323](https://www.cve.org/CVERecord?id=CVE-2026-47323) | Camel | `CWE-178` Improper Handling of Case Sensitivity | `4.14.6`, `4.18.2` | Quac Tran | [reproducer](https://github.com/oscerd/CVE-2026-47323) |
-| [CVE-2026-49042](https://www.cve.org/CVERecord?id=CVE-2026-49042) | Camel | `CWE-20` Improper Input Validation | `4.18.2`, `4.20.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-49042) |
+| [CVE-2026-49042](https://www.cve.org/CVERecord?id=CVE-2026-49042) | Camel | `CWE-20` Improper Input Validation | `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-49042) |
 
 ---
 
