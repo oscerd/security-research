@@ -17,7 +17,7 @@ Across 25 distinct CWEs, two classes dominate: **deserialization of untrusted da
 | [CVE-2024-23454](https://www.cve.org/CVERecord?id=CVE-2024-23454) | Hadoop | `CWE-378` Creation of Temporary File With Insecure Permissions | `3.4.0` | - |
 | [CVE-2024-23953](https://www.cve.org/CVERecord?id=CVE-2024-23953) | Hive | `CWE-208` Observable Timing Discrepancy | `4.0.0` | - |
 | [CVE-2024-29869](https://www.cve.org/CVERecord?id=CVE-2024-29869) | Hive | `CWE-732` Incorrect Permission Assignment for Critical Resource | `4.0.1` | - |
-| [CVE-2026-28672](https://www.cve.org/CVERecord?id=CVE-2026-28672) | Ranger | `CWE-77` Improper Neutralization of Special Elements used in a Command | `2.9.0` | - |
+| [CVE-2026-28672](https://www.cve.org/CVERecord?id=CVE-2026-28672) | Ranger | `CWE-77` Improper Neutralization of Special Elements used in a Command | `2.9.0` | [reproducer](https://github.com/oscerd/CVE-2026-28672) |
 | [CVE-2026-34476](https://www.cve.org/CVERecord?id=CVE-2026-34476) | SkyWalking MCP | `CWE-918` Server-Side Request Forgery | not published | - |
 | [CVE-2026-40005](https://www.cve.org/CVERecord?id=CVE-2026-40005) | IoTDB | `CWE-22` Improper Limitation of a Pathname to a Restricted Directory | `2.0.10` | - |
 | [CVE-2026-40008](https://www.cve.org/CVERecord?id=CVE-2026-40008) | IoTDB | `CWE-470` Use of Externally-Controlled Input to Select Classes or Code | `2.0.10` | - |
@@ -25,7 +25,7 @@ Across 25 distinct CWEs, two classes dominate: **deserialization of untrusted da
 | [CVE-2026-41041](https://www.cve.org/CVERecord?id=CVE-2026-41041) | Gravitino | `CWE-177` Improper Handling of URL Encoding | `1.2.1` | - |
 | [CVE-2026-44616](https://www.cve.org/CVERecord?id=CVE-2026-44616) | Zeppelin | `CWE-90` Improper Neutralization of Special Elements used in an LDAP Query | `0.12.1` | - |
 | [CVE-2026-49361](https://www.cve.org/CVERecord?id=CVE-2026-49361) | Fluss (incubating) | `CWE-400` Uncontrolled Resource Consumption | not published | - |
-| [CVE-2026-63039](https://www.cve.org/CVERecord?id=CVE-2026-63039) | InLong | `CWE-89` Improper Neutralization of Special Elements used in an SQL Command | `2.4.0` | - |
+| [CVE-2026-63039](https://www.cve.org/CVERecord?id=CVE-2026-63039) | InLong | `CWE-89` Improper Neutralization of Special Elements used in an SQL Command | `2.4.0` | [reproducer](https://github.com/oscerd/CVE-2026-63039) |
 | [CVE-2026-64640](https://www.cve.org/CVERecord?id=CVE-2026-64640) | Polaris | `CWE-863` Incorrect Authorization | `1.7.0` | [reproducer](https://github.com/oscerd/CVE-2026-64640) |
 
 ## Apache Camel: 30 CVEs
