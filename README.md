@@ -1,6 +1,6 @@
 # Security Research
 
-Vulnerabilities I have reported to the Apache Software Foundation, disclosed through the [ASF security process](https://www.apache.org/security/). **42 CVEs across 13 projects**, 2023 to 2026.
+Vulnerabilities I have reported to the Apache Software Foundation, disclosed through the [ASF security process](https://www.apache.org/security/). **44 CVEs across 13 projects**, 2023 to 2026.
 
 Where a public reproducer exists it is linked. Each one is a minimal, self-contained project that demonstrates the issue and names the release that fixed it.
 
@@ -26,7 +26,7 @@ Across 23 distinct CWEs, two classes dominate: **deserialization of untrusted da
 | [CVE-2026-49361](https://www.cve.org/CVERecord?id=CVE-2026-49361) | Fluss (incubating) | `CWE-400` Uncontrolled Resource Consumption | not published | - |
 | [CVE-2026-64640](https://www.cve.org/CVERecord?id=CVE-2026-64640) | Polaris | `CWE-863` Incorrect Authorization | `1.7.0` | [reproducer](https://github.com/oscerd/CVE-2026-64640) |
 
-## Apache Camel: 28 CVEs
+## Apache Camel: 30 CVEs
 
 Camel is the project I maintain, so it gets the most scrutiny. The dominant pattern is **unfiltered inbound headers reaching a producer's control plane**, plus a long tail of unsafe deserialization in registry and migration paths.
 
@@ -60,8 +60,10 @@ Camel is the project I maintain, so it gets the most scrutiny. The dominant patt
 | [CVE-2026-55994](https://www.cve.org/CVERecord?id=CVE-2026-55994) | Camel Iggy | `CWE-918` Server-Side Request Forgery | `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-55994) |
 | [CVE-2026-56139](https://www.cve.org/CVERecord?id=CVE-2026-56139) | Camel Undertow | `CWE-209` Generation of Error Message Containing Sensitive Information | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-56139) |
 | [CVE-2026-56140](https://www.cve.org/CVERecord?id=CVE-2026-56140) | Camel AWS2 SNS | `CWE-20` Improper Input Validation | `4.14.8`, `4.18.3`, `4.21.0` | - |
+| [CVE-2026-63621](https://www.cve.org/CVERecord?id=CVE-2026-63621) | Camel Knative | `CWE-20` Improper Input Validation | `4.14.9`, `4.18.4`, `4.22.0` | [reproducer](https://github.com/oscerd/CVE-2026-63621) |
+| [CVE-2026-78329](https://www.cve.org/CVERecord?id=CVE-2026-78329) | Camel Undertow | `CWE-20` Improper Input Validation | `4.14.9`, `4.18.4`, `4.22.0` | [reproducer](https://github.com/oscerd/CVE-2026-78329) |
 
-## Reproducers for issues found by others: 20
+## Reproducers for issues found by others: 26
 
 As a Camel maintainer I also build reproducers for reports that come in from outside, to confirm the issue and validate the fix. **These are not my findings.** Credit belongs to the reporters named below.
 
@@ -87,6 +89,12 @@ As a Camel maintainer I also build reproducers for reports that come in from out
 | [CVE-2026-46588](https://www.cve.org/CVERecord?id=CVE-2026-46588) | Camel | `CWE-20` Improper Input Validation | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46588) |
 | [CVE-2026-47323](https://www.cve.org/CVERecord?id=CVE-2026-47323) | Camel | `CWE-178` Improper Handling of Case Sensitivity | `4.14.6`, `4.18.2` | Quac Tran | [reproducer](https://github.com/oscerd/CVE-2026-47323) |
 | [CVE-2026-49042](https://www.cve.org/CVERecord?id=CVE-2026-49042) | Camel | `CWE-20` Improper Input Validation | `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-49042) |
+| [CVE-2026-59230](https://www.cve.org/CVERecord?id=CVE-2026-59230) | Camel Mail | `CWE-20` Improper Input Validation | `4.14.9`, `4.18.4`, `4.22.0` | Atuin - Automated Vulnerability Discovery Engine, anciety of Tencent Xuanwu Lab | [reproducer](https://github.com/oscerd/CVE-2026-59230) |
+| [CVE-2026-60093](https://www.cve.org/CVERecord?id=CVE-2026-60093) | Camel Azure Storage Datalake | `CWE-22` Improper Limitation of a Pathname to a Restricted Directory | `4.14.9`, `4.18.4`, `4.22.0` | n0mi1k and Hiep Nguyen | [reproducer](https://github.com/oscerd/CVE-2026-60093) |
+| [CVE-2026-66906](https://www.cve.org/CVERecord?id=CVE-2026-66906) | Camel Azure Storage Blob | `CWE-22` Improper Limitation of a Pathname to a Restricted Directory | `4.14.9`, `4.18.4`, `4.22.0` | n0mi1k and Hiep Nguyen | [reproducer](https://github.com/oscerd/CVE-2026-66906) |
+| [CVE-2026-66907](https://www.cve.org/CVERecord?id=CVE-2026-66907) | Camel Google Storage | `CWE-22` Improper Limitation of a Pathname to a Restricted Directory | `4.14.9`, `4.18.4`, `4.22.0` | n0mi1k | [reproducer](https://github.com/oscerd/CVE-2026-66907) |
+| [CVE-2026-66908](https://www.cve.org/CVERecord?id=CVE-2026-66908) | Camel Platform HTTP Main | `CWE-287` Improper Authentication | `4.22.0` | n0mi1k | [reproducer](https://github.com/oscerd/CVE-2026-66908) |
+| [CVE-2026-71300](https://www.cve.org/CVERecord?id=CVE-2026-71300) | Camel Atmosphere Websocket | `CWE-20` Improper Input Validation | `4.14.9`, `4.18.4`, `4.22.0` | Barak Srour from Apiiro | [reproducer](https://github.com/oscerd/CVE-2026-71300) |
 
 ---
 
