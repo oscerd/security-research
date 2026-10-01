@@ -97,7 +97,7 @@ As a Camel maintainer I also build reproducers for reports that come in from out
 | [CVE-2026-66907](https://www.cve.org/CVERecord?id=CVE-2026-66907) | Camel Google Storage | `CWE-22` Improper Limitation of a Pathname to a Restricted Directory | `4.14.9`, `4.18.4`, `4.22.0` | n0mi1k | [reproducer](https://github.com/oscerd/CVE-2026-66907) |
 | [CVE-2026-66908](https://www.cve.org/CVERecord?id=CVE-2026-66908) | Camel Platform HTTP Main | `CWE-287` Improper Authentication | `4.22.0` | n0mi1k | [reproducer](https://github.com/oscerd/CVE-2026-66908) |
 | [CVE-2026-71300](https://www.cve.org/CVERecord?id=CVE-2026-71300) | Camel Atmosphere Websocket | `CWE-20` Improper Input Validation | `4.14.9`, `4.18.4`, `4.22.0` | Barak Srour from Apiiro | [reproducer](https://github.com/oscerd/CVE-2026-71300) |
-| [CVE-2026-88789](https://www.cve.org/CVERecord?id=CVE-2026-88789) | Camel Quarkus XSLT (Xalan) | `CWE-611` Improper Restriction of XML External Entity Reference | `3.33.3`, `3.40.0` | Apache Camel internal analysis (James Netherton) | [reproducer](https://github.com/oscerd/CVE-2026-88789) |
+| [CVE-2026-88789](https://www.cve.org/CVERecord?id=CVE-2026-88789) | Camel Quarkus XSLT (Xalan) | `CWE-611` Improper Restriction of XML External Entity Reference | `3.33.3`, `3.40.0` | Apache Camel internal analysis, using Claude Security Tool | [reproducer](https://github.com/oscerd/CVE-2026-88789) |
 
 ---
 
