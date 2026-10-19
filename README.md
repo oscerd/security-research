@@ -65,7 +65,7 @@ Camel is the project I maintain, so it gets the most scrutiny. The dominant patt
 | [CVE-2026-63621](https://www.cve.org/CVERecord?id=CVE-2026-63621) | Camel Knative | `CWE-20` Improper Input Validation | `4.14.9`, `4.18.4`, `4.22.0` | [reproducer](https://github.com/oscerd/CVE-2026-63621) |
 | [CVE-2026-78329](https://www.cve.org/CVERecord?id=CVE-2026-78329) | Camel Undertow | `CWE-20` Improper Input Validation | `4.14.9`, `4.18.4`, `4.22.0` | [reproducer](https://github.com/oscerd/CVE-2026-78329) |
 
-## Reproducers for issues found by others: 39
+## Reproducers for issues found by others: 40
 
 As a Camel maintainer I also build reproducers for reports that come in from outside, and for issues found by internal analysis within the project, to confirm the issue and validate the fix. **These are not my findings.** Credit belongs to the reporters named below.
 
@@ -109,6 +109,7 @@ As a Camel maintainer I also build reproducers for reports that come in from out
 | [CVE-2026-80343](https://www.cve.org/CVERecord?id=CVE-2026-80343) | Camel Netty HTTP | `CWE-178` Improper Handling of Case Sensitivity | `4.18.5`, `4.22.1`, `4.23.0` | Claude Security Scan Tool | [reproducer](https://github.com/oscerd/CVE-2026-80343) |
 | [CVE-2026-80344](https://www.cve.org/CVERecord?id=CVE-2026-80344) | Camel AS2 | `CWE-918` Server-Side Request Forgery | `4.18.5`, `4.22.1`, `4.23.0` | Claude Security Scan Tool | [reproducer](https://github.com/oscerd/CVE-2026-80344) |
 | [CVE-2026-83531](https://www.cve.org/CVERecord?id=CVE-2026-83531) | Camel Dynamic Router | `CWE-94` Code Injection | `4.18.5`, `4.22.1`, `4.23.0` | Leon Zlobecki | [reproducer](https://github.com/oscerd/CVE-2026-83531) |
+| [CVE-2026-84176](https://www.cve.org/CVERecord?id=CVE-2026-84176) | Camel Platform HTTP Vertx | `CWE-942` Permissive Cross-domain Policy with Untrusted Domains | `4.18.5`, `4.22.1`, `4.23.0` | Claude Security Scan Tool | [reproducer](https://github.com/oscerd/CVE-2026-84176) |
 | [CVE-2026-88789](https://www.cve.org/CVERecord?id=CVE-2026-88789) | Camel Quarkus XSLT (Xalan) | `CWE-611` Improper Restriction of XML External Entity Reference | `3.33.3`, `3.40.0` | Apache Camel internal analysis, using Claude Security Tool | [reproducer](https://github.com/oscerd/CVE-2026-88789) |
 
 ---
