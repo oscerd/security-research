@@ -64,7 +64,7 @@ Camel is the project I maintain, so it gets the most scrutiny. The dominant patt
 | [CVE-2026-56140](https://www.cve.org/CVERecord?id=CVE-2026-56140) | Camel AWS2 SNS | `CWE-20` Improper Input Validation | `4.14.8`, `4.18.3`, `4.21.0` | - |
 | [CVE-2026-63621](https://www.cve.org/CVERecord?id=CVE-2026-63621) | Camel Knative | `CWE-20` Improper Input Validation | `4.14.9`, `4.18.4`, `4.22.0` | [reproducer](https://github.com/oscerd/CVE-2026-63621) |
 | [CVE-2026-78329](https://www.cve.org/CVERecord?id=CVE-2026-78329) | Camel Undertow | `CWE-20` Improper Input Validation | `4.14.9`, `4.18.4`, `4.22.0` | [reproducer](https://github.com/oscerd/CVE-2026-78329) |
-| [CVE-2026-94386](https://www.cve.org/CVERecord?id=CVE-2026-94386) | Camel OAuth | `CWE-524` Use of Cache Containing Sensitive Information | `4.22.2`, `4.23.0` | - |
+| [CVE-2026-94386](https://www.cve.org/CVERecord?id=CVE-2026-94386) | Camel OAuth | `CWE-524` Use of Cache Containing Sensitive Information | `4.22.2`, `4.23.0` | [reproducer](https://github.com/oscerd/CVE-2026-94386) |
 | [CVE-2026-95663](https://www.cve.org/CVERecord?id=CVE-2026-95663) | Camel Keycloak | `CWE-613` Insufficient Session Expiration | `4.18.5`, `4.22.2`, `4.23.0` | [reproducer](https://github.com/oscerd/CVE-2026-95663) |
 | [CVE-2026-95664](https://www.cve.org/CVERecord?id=CVE-2026-95664) | Camel AWS2 S3 | `CWE-917` Expression Language Injection | `4.18.5`, `4.22.2`, `4.23.0` | [reproducer](https://github.com/oscerd/CVE-2026-95664) |
 
@@ -100,7 +100,7 @@ As a Camel maintainer I also build reproducers for reports that come in from out
 | [CVE-2026-66907](https://www.cve.org/CVERecord?id=CVE-2026-66907) | Camel Google Storage | `CWE-22` Improper Limitation of a Pathname to a Restricted Directory | `4.14.9`, `4.18.4`, `4.22.0` | n0mi1k | [reproducer](https://github.com/oscerd/CVE-2026-66907) |
 | [CVE-2026-66908](https://www.cve.org/CVERecord?id=CVE-2026-66908) | Camel Platform HTTP Main | `CWE-287` Improper Authentication | `4.22.0` | n0mi1k | [reproducer](https://github.com/oscerd/CVE-2026-66908) |
 | [CVE-2026-71300](https://www.cve.org/CVERecord?id=CVE-2026-71300) | Camel Atmosphere Websocket | `CWE-20` Improper Input Validation | `4.14.9`, `4.18.4`, `4.22.0` | Barak Srour from Apiiro | [reproducer](https://github.com/oscerd/CVE-2026-71300) |
-| [CVE-2026-71569](https://www.cve.org/CVERecord?id=CVE-2026-71569) | Camel A2A | `CWE-918` Server-Side Request Forgery | `4.22.2`, `4.23.0` | 2122295973 at qq dot com, through the ASF Security Team | - |
+| [CVE-2026-71569](https://www.cve.org/CVERecord?id=CVE-2026-71569) | Camel A2A | `CWE-918` Server-Side Request Forgery | `4.22.2`, `4.23.0` | 2122295973 at qq dot com, through the ASF Security Team | [reproducer](https://github.com/oscerd/CVE-2026-71569) |
 | [CVE-2026-78162](https://www.cve.org/CVERecord?id=CVE-2026-78162) | Camel Hazelcast | `CWE-502` Deserialization of Untrusted Data | `4.18.5`, `4.22.1`, `4.23.0` | cattier from TCBS and Leon Zlobecki | [reproducer](https://github.com/oscerd/CVE-2026-78162) |
 | [CVE-2026-78163](https://www.cve.org/CVERecord?id=CVE-2026-78163) | Camel Docling | `CWE-918` Server-Side Request Forgery | `4.18.5`, `4.22.1`, `4.23.0` | Li Zhiyao (BUPT) | [reproducer](https://github.com/oscerd/CVE-2026-78163) |
 | [CVE-2026-78164](https://www.cve.org/CVERecord?id=CVE-2026-78164) | Camel HTTP | `CWE-1336` Improper Neutralization of Special Elements Used in a Template Engine | `4.18.5`, `4.22.1`, `4.23.0` | 1428265354@qq.com | [reproducer](https://github.com/oscerd/CVE-2026-78164) |
@@ -143,8 +143,8 @@ As a Camel maintainer I also build reproducers for reports that come in from out
 | [CVE-2026-90885](https://www.cve.org/CVERecord?id=CVE-2026-90885) | Camel Saxon | `CWE-611` Improper Restriction of XML External Entity Reference | `4.18.5`, `4.22.2`, `4.23.0` | Leon Zlobecki | [reproducer](https://github.com/oscerd/CVE-2026-90885) |
 | [CVE-2026-91858](https://www.cve.org/CVERecord?id=CVE-2026-91858) | Camel FOP | `CWE-611` Improper Restriction of XML External Entity Reference | `4.18.5`, `4.22.1`, `4.23.0` | Claude Security Scan Tool | [reproducer](https://github.com/oscerd/CVE-2026-91858) |
 | [CVE-2026-95628](https://www.cve.org/CVERecord?id=CVE-2026-95628) | Camel Docling | `CWE-22` Improper Limitation of a Pathname to a Restricted Directory | `4.18.5`, `4.22.2`, `4.23.0` | Zhixi "Jace" Sun, independent security researcher | [reproducer](https://github.com/oscerd/CVE-2026-95628) |
-| [CVE-2026-95629](https://www.cve.org/CVERecord?id=CVE-2026-95629) | Camel Docling | `CWE-22` Improper Limitation of a Pathname to a Restricted Directory | `4.18.5`, `4.22.2`, `4.23.0` | Zhixi "Jace" Sun, independent security researcher | - |
-| [CVE-2026-101259](https://www.cve.org/CVERecord?id=CVE-2026-101259) | Camel CoAP | `CWE-209` Generation of Error Message Containing Sensitive Information | `4.18.5`, `4.22.2`, `4.23.0` | Zhixi "Jace" Sun, independent security researcher | - |
+| [CVE-2026-95629](https://www.cve.org/CVERecord?id=CVE-2026-95629) | Camel Docling | `CWE-22` Improper Limitation of a Pathname to a Restricted Directory | `4.18.5`, `4.22.2`, `4.23.0` | Zhixi "Jace" Sun, independent security researcher | [reproducer](https://github.com/oscerd/CVE-2026-95629) |
+| [CVE-2026-101259](https://www.cve.org/CVERecord?id=CVE-2026-101259) | Camel CoAP | `CWE-209` Generation of Error Message Containing Sensitive Information | `4.18.5`, `4.22.2`, `4.23.0` | Zhixi "Jace" Sun, independent security researcher | [reproducer](https://github.com/oscerd/CVE-2026-101259) |
 
 ---
 
