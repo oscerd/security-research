@@ -1,6 +1,6 @@
 # Security Research
 
-Vulnerabilities I have reported to the Apache Software Foundation, disclosed through the [ASF security process](https://www.apache.org/security/). **29 CVEs across 15 projects**, 2023 to 2026. I am also credited on 84 more where I wrote the remediation for somebody else's finding; those are in the third table.
+Vulnerabilities I have reported to the Apache Software Foundation, disclosed through the [ASF security process](https://www.apache.org/security/). **29 CVEs across 15 projects**, 2023 to 2026. I also wrote the remediation for 84 more that other people found - not a credit of mine, and listed separately in the third table.
 
 Where a public reproducer exists it is linked. Each one is a minimal, self-contained project that demonstrates the issue and names the release that fixed it.
 
