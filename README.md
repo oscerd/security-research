@@ -1,10 +1,10 @@
 # Security Research
 
-Vulnerabilities I have reported to the Apache Software Foundation, disclosed through the [ASF security process](https://www.apache.org/security/). **49 CVEs across 15 projects**, 2023 to 2026.
+Vulnerabilities I have reported to the Apache Software Foundation, disclosed through the [ASF security process](https://www.apache.org/security/). **29 CVEs across 15 projects**, 2023 to 2026. I am also credited on 84 more where I wrote the remediation for somebody else's finding; those are in the third table.
 
 Where a public reproducer exists it is linked. Each one is a minimal, self-contained project that demonstrates the issue and names the release that fixed it.
 
-Across 25 distinct CWEs, two classes dominate: **deserialization of untrusted data** (7) and **server-side request forgery** (7).
+Across 22 distinct CWEs, the most frequent class is **deserialization of untrusted data** (4), followed by observable timing discrepancy, server-side request forgery, insufficient session expiration and improper input validation (2 each).
 
 
 ## Across the Apache ecosystem: 16 CVEs, 14 projects
@@ -28,9 +28,9 @@ Across 25 distinct CWEs, two classes dominate: **deserialization of untrusted da
 | [CVE-2026-63039](https://www.cve.org/CVERecord?id=CVE-2026-63039) | InLong | `CWE-89` Improper Neutralization of Special Elements used in an SQL Command | `2.4.0` | [reproducer](https://github.com/oscerd/CVE-2026-63039) |
 | [CVE-2026-64640](https://www.cve.org/CVERecord?id=CVE-2026-64640) | Polaris | `CWE-863` Incorrect Authorization | `1.7.0` | [reproducer](https://github.com/oscerd/CVE-2026-64640) |
 
-## Apache Camel: 33 CVEs
+## Apache Camel: 13 CVEs
 
-Camel is the project I maintain, so it gets the most scrutiny. The dominant pattern is **unfiltered inbound headers reaching a producer's control plane**, plus a long tail of unsafe deserialization in registry and migration paths.
+Camel is the project I maintain, so it gets the most scrutiny. These are the ones I found myself: mostly **unsafe deserialization** in aggregation repositories and migration paths, plus token and session handling that kept accepting what it should have expired.
 
 | CVE | Component | Class | Fixed in | PoC |
 |---|---|---|---|---|
@@ -40,37 +40,17 @@ Camel is the project I maintain, so it gets the most scrutiny. The dominant patt
 | [CVE-2026-27172](https://www.cve.org/CVERecord?id=CVE-2026-27172) | Camel | `CWE-502` Deserialization of Untrusted Data | `4.14.6`, `4.18.1` | [reproducer](https://github.com/oscerd/CVE-2026-27172) |
 | [CVE-2026-40047](https://www.cve.org/CVERecord?id=CVE-2026-40047) | Camel | `CWE-88` Improper Neutralization of Argument Delimiters in a Command | `4.18.3` | [reproducer](https://github.com/oscerd/CVE-2026-40047) |
 | [CVE-2026-40048](https://www.cve.org/CVERecord?id=CVE-2026-40048) | Camel PQC | `CWE-502` Deserialization of Untrusted Data | `4.18.2`, `4.20.0` | [reproducer](https://github.com/oscerd/CVE-2026-40048) |
-| [CVE-2026-43866](https://www.cve.org/CVERecord?id=CVE-2026-43866) | Camel | `CWE-502` Deserialization of Untrusted Data | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-43866) |
-| [CVE-2026-43867](https://www.cve.org/CVERecord?id=CVE-2026-43867) | Camel | `CWE-502` Deserialization of Untrusted Data | `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-43867) |
 | [CVE-2026-46455](https://www.cve.org/CVERecord?id=CVE-2026-46455) | Camel | `CWE-613` Insufficient Session Expiration | `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-46455) |
 | [CVE-2026-46585](https://www.cve.org/CVERecord?id=CVE-2026-46585) | Camel Lucene | `CWE-639` Authorization Bypass Through User-Controlled Key | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-46585) |
-| [CVE-2026-46590](https://www.cve.org/CVERecord?id=CVE-2026-46590) | Camel | `CWE-502` Deserialization of Untrusted Data | `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-46590) |
-| [CVE-2026-46591](https://www.cve.org/CVERecord?id=CVE-2026-46591) | Camel | `CWE-943` Improper Neutralization of Special Elements in Data Query Logic | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-46591) |
-| [CVE-2026-46592](https://www.cve.org/CVERecord?id=CVE-2026-46592) | Camel | `CWE-441` Unintended Proxy or Intermediary | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-46592) |
-| [CVE-2026-46726](https://www.cve.org/CVERecord?id=CVE-2026-46726) | Camel Vertx Websocket | `CWE-918` Server-Side Request Forgery | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-46726) |
-| [CVE-2026-48203](https://www.cve.org/CVERecord?id=CVE-2026-48203) | Camel | `CWE-918` Server-Side Request Forgery | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-48203) |
-| [CVE-2026-48204](https://www.cve.org/CVERecord?id=CVE-2026-48204) | Camel | `CWE-284` Improper Access Control | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-48204) |
-| [CVE-2026-48205](https://www.cve.org/CVERecord?id=CVE-2026-48205) | Camel DNS | `CWE-918` Server-Side Request Forgery | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-48205) |
-| [CVE-2026-48206](https://www.cve.org/CVERecord?id=CVE-2026-48206) | Camel JIRA | `CWE-639` Authorization Bypass Through User-Controlled Key | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-48206) |
-| [CVE-2026-49086](https://www.cve.org/CVERecord?id=CVE-2026-49086) | Camel Dapr | `CWE-441` Unintended Proxy or Intermediary | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-49086) |
-| [CVE-2026-49097](https://www.cve.org/CVERecord?id=CVE-2026-49097) | Camel | `CWE-74` Improper Neutralization of Special Elements in Output Used by a Downstream Component | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-49097) |
-| [CVE-2026-49098](https://www.cve.org/CVERecord?id=CVE-2026-49098) | Camel | `CWE-74` Improper Neutralization of Special Elements in Output Used by a Downstream Component | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-49098) |
-| [CVE-2026-49099](https://www.cve.org/CVERecord?id=CVE-2026-49099) | Camel Salesforce | `CWE-639` Authorization Bypass Through User-Controlled Key | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-49099) |
-| [CVE-2026-49365](https://www.cve.org/CVERecord?id=CVE-2026-49365) | Camel | `CWE-209` Generation of Error Message Containing Sensitive Information | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-49365) |
-| [CVE-2026-53913](https://www.cve.org/CVERecord?id=CVE-2026-53913) | Camel Keycloak | `CWE-636` Not Failing Securely | `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-53913) |
-| [CVE-2026-55993](https://www.cve.org/CVERecord?id=CVE-2026-55993) | Camel Atmosphere Websocket | `CWE-918` Server-Side Request Forgery | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-55993) |
-| [CVE-2026-55994](https://www.cve.org/CVERecord?id=CVE-2026-55994) | Camel Iggy | `CWE-918` Server-Side Request Forgery | `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-55994) |
-| [CVE-2026-56139](https://www.cve.org/CVERecord?id=CVE-2026-56139) | Camel Undertow | `CWE-209` Generation of Error Message Containing Sensitive Information | `4.14.8`, `4.18.3`, `4.21.0` | [reproducer](https://github.com/oscerd/CVE-2026-56139) |
-| [CVE-2026-56140](https://www.cve.org/CVERecord?id=CVE-2026-56140) | Camel AWS2 SNS | `CWE-20` Improper Input Validation | `4.14.8`, `4.18.3`, `4.21.0` | - |
 | [CVE-2026-63621](https://www.cve.org/CVERecord?id=CVE-2026-63621) | Camel Knative | `CWE-20` Improper Input Validation | `4.14.9`, `4.18.4`, `4.22.0` | [reproducer](https://github.com/oscerd/CVE-2026-63621) |
 | [CVE-2026-78329](https://www.cve.org/CVERecord?id=CVE-2026-78329) | Camel Undertow | `CWE-20` Improper Input Validation | `4.14.9`, `4.18.4`, `4.22.0` | [reproducer](https://github.com/oscerd/CVE-2026-78329) |
 | [CVE-2026-94386](https://www.cve.org/CVERecord?id=CVE-2026-94386) | Camel OAuth | `CWE-524` Use of Cache Containing Sensitive Information | `4.22.2`, `4.23.0` | [reproducer](https://github.com/oscerd/CVE-2026-94386) |
 | [CVE-2026-95663](https://www.cve.org/CVERecord?id=CVE-2026-95663) | Camel Keycloak | `CWE-613` Insufficient Session Expiration | `4.18.5`, `4.22.2`, `4.23.0` | [reproducer](https://github.com/oscerd/CVE-2026-95663) |
 | [CVE-2026-95664](https://www.cve.org/CVERecord?id=CVE-2026-95664) | Camel AWS2 S3 | `CWE-917` Expression Language Injection | `4.18.5`, `4.22.2`, `4.23.0` | [reproducer](https://github.com/oscerd/CVE-2026-95664) |
 
-## Reproducers for issues found by others: 71
+## Reproducers for issues found by others: 91
 
-As a Camel maintainer I also build reproducers for reports that come in from outside, and for issues found by internal analysis within the project, to confirm the issue and validate the fix. **These are not my findings.** Credit belongs to the reporters named below.
+As the maintainer who handles Camel's security reports, I take the ones that come in from outside - and the ones internal analysis turns up - through triage, the fix, the backports to the supported LTS lines and the advisory, and I publish a reproducer to confirm the issue and validate the fix. **These are not my findings.** The finder credit belongs to the reporters named below. Of the 91, I wrote the remediation for 84; the rest were fixed by other committers.
 
 | CVE | Component | Class | Fixed in | Reported by | PoC |
 |---|---|---|---|---|---|
@@ -85,6 +65,8 @@ As a Camel maintainer I also build reproducers for reports that come in from out
 | [CVE-2026-40860](https://www.cve.org/CVERecord?id=CVE-2026-40860) | Camel | `CWE-502` Deserialization of Untrusted Data | `4.14.7`, `4.18.2`, `4.20.0` | Venkatraman Kumar from Securin | [reproducer](https://github.com/oscerd/CVE-2026-40860) |
 | [CVE-2026-42527](https://www.cve.org/CVERecord?id=CVE-2026-42527) | Camel | `CWE-502` Deserialization of Untrusted Data | `4.14.8`, `4.18.3`, `4.21.0` | Venkatraman Kumar from Securin and Yu Bao from Paypal | [reproducer](https://github.com/oscerd/CVE-2026-42527) |
 | [CVE-2026-43865](https://www.cve.org/CVERecord?id=CVE-2026-43865) | Camel | `CWE-502` Deserialization of Untrusted Data | `4.14.8`, `4.18.3`, `4.21.0` | gaorenyusi | [reproducer](https://github.com/oscerd/CVE-2026-43865) |
+| [CVE-2026-43866](https://www.cve.org/CVERecord?id=CVE-2026-43866) | Camel | `CWE-502` Deserialization of Untrusted Data | `4.14.8`, `4.18.3`, `4.21.0` | gaorenyusi | [reproducer](https://github.com/oscerd/CVE-2026-43866) |
+| [CVE-2026-43867](https://www.cve.org/CVERecord?id=CVE-2026-43867) | Camel | `CWE-502` Deserialization of Untrusted Data | `4.18.3`, `4.21.0` | Venkatraman Kumar from Securin | [reproducer](https://github.com/oscerd/CVE-2026-43867) |
 | [CVE-2026-46453](https://www.cve.org/CVERecord?id=CVE-2026-46453) | Camel | `CWE-639` Authorization Bypass Through User-Controlled Key | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46453) |
 | [CVE-2026-46454](https://www.cve.org/CVERecord?id=CVE-2026-46454) | Camel | `CWE-20` Improper Input Validation | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46454) |
 | [CVE-2026-46456](https://www.cve.org/CVERecord?id=CVE-2026-46456) | Camel | `CWE-20` Improper Input Validation | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46456) |
@@ -92,8 +74,26 @@ As a Camel maintainer I also build reproducers for reports that come in from out
 | [CVE-2026-46584](https://www.cve.org/CVERecord?id=CVE-2026-46584) | Camel Mail | `CWE-200` Exposure of Sensitive Information to an Unauthorized Actor | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46584) |
 | [CVE-2026-46587](https://www.cve.org/CVERecord?id=CVE-2026-46587) | Camel | `CWE-20` Improper Input Validation | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46587) |
 | [CVE-2026-46588](https://www.cve.org/CVERecord?id=CVE-2026-46588) | Camel | `CWE-20` Improper Input Validation | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46588) |
+| [CVE-2026-46590](https://www.cve.org/CVERecord?id=CVE-2026-46590) | Camel | `CWE-502` Deserialization of Untrusted Data | `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46590) |
+| [CVE-2026-46591](https://www.cve.org/CVERecord?id=CVE-2026-46591) | Camel | `CWE-943` Improper Neutralization of Special Elements in Data Query Logic | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46591) |
+| [CVE-2026-46592](https://www.cve.org/CVERecord?id=CVE-2026-46592) | Camel | `CWE-441` Unintended Proxy or Intermediary | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-46592) |
+| [CVE-2026-46726](https://www.cve.org/CVERecord?id=CVE-2026-46726) | Camel Vertx Websocket | `CWE-918` Server-Side Request Forgery | `4.14.8`, `4.18.3`, `4.21.0` | Kamalpreet Singh | [reproducer](https://github.com/oscerd/CVE-2026-46726) |
 | [CVE-2026-47323](https://www.cve.org/CVERecord?id=CVE-2026-47323) | Camel | `CWE-178` Improper Handling of Case Sensitivity | `4.14.6`, `4.18.2` | Quac Tran | [reproducer](https://github.com/oscerd/CVE-2026-47323) |
+| [CVE-2026-48203](https://www.cve.org/CVERecord?id=CVE-2026-48203) | Camel | `CWE-918` Server-Side Request Forgery | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-48203) |
+| [CVE-2026-48204](https://www.cve.org/CVERecord?id=CVE-2026-48204) | Camel | `CWE-284` Improper Access Control | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-48204) |
+| [CVE-2026-48205](https://www.cve.org/CVERecord?id=CVE-2026-48205) | Camel DNS | `CWE-918` Server-Side Request Forgery | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-48205) |
+| [CVE-2026-48206](https://www.cve.org/CVERecord?id=CVE-2026-48206) | Camel JIRA | `CWE-639` Authorization Bypass Through User-Controlled Key | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-48206) |
 | [CVE-2026-49042](https://www.cve.org/CVERecord?id=CVE-2026-49042) | Camel | `CWE-20` Improper Input Validation | `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-49042) |
+| [CVE-2026-49086](https://www.cve.org/CVERecord?id=CVE-2026-49086) | Camel Dapr | `CWE-441` Unintended Proxy or Intermediary | `4.14.8`, `4.18.3`, `4.21.0` | Leon Zlobecki | [reproducer](https://github.com/oscerd/CVE-2026-49086) |
+| [CVE-2026-49097](https://www.cve.org/CVERecord?id=CVE-2026-49097) | Camel | `CWE-74` Improper Neutralization of Special Elements in Output Used by a Downstream Component | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-49097) |
+| [CVE-2026-49098](https://www.cve.org/CVERecord?id=CVE-2026-49098) | Camel | `CWE-74` Improper Neutralization of Special Elements in Output Used by a Downstream Component | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-49098) |
+| [CVE-2026-49099](https://www.cve.org/CVERecord?id=CVE-2026-49099) | Camel Salesforce | `CWE-639` Authorization Bypass Through User-Controlled Key | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-49099) |
+| [CVE-2026-49365](https://www.cve.org/CVERecord?id=CVE-2026-49365) | Camel | `CWE-209` Generation of Error Message Containing Sensitive Information | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-49365) |
+| [CVE-2026-53913](https://www.cve.org/CVERecord?id=CVE-2026-53913) | Camel Keycloak | `CWE-636` Not Failing Securely | `4.18.3`, `4.21.0` | Lidor Ben Shitrit from Novee Security | [reproducer](https://github.com/oscerd/CVE-2026-53913) |
+| [CVE-2026-55993](https://www.cve.org/CVERecord?id=CVE-2026-55993) | Camel Atmosphere Websocket | `CWE-918` Server-Side Request Forgery | `4.14.8`, `4.18.3`, `4.21.0` | Kamalpreet Singh | [reproducer](https://github.com/oscerd/CVE-2026-55993) |
+| [CVE-2026-55994](https://www.cve.org/CVERecord?id=CVE-2026-55994) | Camel Iggy | `CWE-918` Server-Side Request Forgery | `4.18.3`, `4.21.0` | Kamalpreet Singh | [reproducer](https://github.com/oscerd/CVE-2026-55994) |
+| [CVE-2026-56139](https://www.cve.org/CVERecord?id=CVE-2026-56139) | Camel Undertow | `CWE-209` Generation of Error Message Containing Sensitive Information | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | [reproducer](https://github.com/oscerd/CVE-2026-56139) |
+| [CVE-2026-56140](https://www.cve.org/CVERecord?id=CVE-2026-56140) | Camel AWS2 SNS | `CWE-20` Improper Input Validation | `4.14.8`, `4.18.3`, `4.21.0` | Yu Bao from PayPal | - |
 | [CVE-2026-59230](https://www.cve.org/CVERecord?id=CVE-2026-59230) | Camel Mail | `CWE-20` Improper Input Validation | `4.14.9`, `4.18.4`, `4.22.0` | Atuin - Automated Vulnerability Discovery Engine, anciety of Tencent Xuanwu Lab | [reproducer](https://github.com/oscerd/CVE-2026-59230) |
 | [CVE-2026-60093](https://www.cve.org/CVERecord?id=CVE-2026-60093) | Camel Azure Storage Datalake | `CWE-22` Improper Limitation of a Pathname to a Restricted Directory | `4.14.9`, `4.18.4`, `4.22.0` | n0mi1k and Hiep Nguyen | [reproducer](https://github.com/oscerd/CVE-2026-60093) |
 | [CVE-2026-66906](https://www.cve.org/CVERecord?id=CVE-2026-66906) | Camel Azure Storage Blob | `CWE-22` Improper Limitation of a Pathname to a Restricted Directory | `4.14.9`, `4.18.4`, `4.22.0` | n0mi1k and Hiep Nguyen | [reproducer](https://github.com/oscerd/CVE-2026-66906) |
